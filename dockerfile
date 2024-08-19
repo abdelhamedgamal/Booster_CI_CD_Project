@@ -9,6 +9,3 @@ RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
 RUN python3.6 manage.py runserver 0.0.0.0:8000
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "AppsimpleApp.wsgi:application"]
-
-
-CMD ["node", "/nodeapp/app.js"]
