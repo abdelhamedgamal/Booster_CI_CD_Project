@@ -7,8 +7,6 @@ WORKDIR /App
 RUN pip3 install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
-RUN python3.6 manage.py runserver 0.0.0.0:8000
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "AppsimpleApp.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "/App/simpleApp.wsgi:application"]
 
-
-CMD ["node", "/nodeapp/app.js"]
+#CMD ["node", "/nodeapp/app.js"]
